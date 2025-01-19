@@ -62,7 +62,7 @@ Você poderá explorar cada álbum, visualizar as capas (incluindo versões alte
 
 ## 📸 Captura de Tela
 
-![Captura de tela do projeto](https://i.imgur.com/oGldGAo.png)
+![Captura de tela do projeto](https://i.imgur.com/1xZciY6.png)
 
 ---
 
