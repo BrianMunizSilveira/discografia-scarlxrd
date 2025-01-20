@@ -73,3 +73,20 @@ Este projeto foi criado por Brian Muniz (MXLFYLXRD).
 - 🌐 [Portfólio](https://repositorio-sigma-six.vercel.app/)
 - 💼 [LinkedIn](https://www.linkedin.com/in/brian-muniz-silveira/)
 - 🎵 [SoundCloud - Scarlxrd](https://soundcloud.com/scarlxrd)
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Se quiser sugerir melhorias ou relatar algum problema, fique à vontade para abrir uma issue ou enviar um pull request.
+
+---
+
+## 📜 Licença
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+
+## ⭐ Gostou do projeto?
+
+Se você gostou deste projeto, deixe uma estrela no repositório! 🌟🌟
