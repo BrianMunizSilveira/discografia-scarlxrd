@@ -341,7 +341,7 @@ footer {
 }
 
 .info-icon {
-    background-color: var(--cor-destaque-1);
+    background-color: #ff0000;
     width: 30px;
     height: 30px;
     display: flex;
@@ -354,17 +354,22 @@ footer {
 }
 
 .info-icon:hover {
-    background-color: var(--cor-destaque-2)
+    background-color: #7c0000;
 }
 
 .info-text {
     display: none;
     margin-left: 10px;
-    background-color: var(--cor-destaque-3);
+    background-color: #575757b6;
     padding: 5px 10px;
     border-radius: 5px
 }
 
 .info-container.active .info-text {
     display: inline-block
+}
+
+#data-atualizacao {
+    font-weight: bold;
+    color: var(--cor-secundaria);
 }
