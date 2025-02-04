@@ -31,11 +31,9 @@
 body {
     color: white;
     background-color: #111;
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.85), 
-      rgba(0, 0, 0, 0.85)
-  ), url('https://i0.wp.com/www.ambientlightblog.com/wp-content/uploads/2018/12/Scarlxrd_051218_0028-feature.jpg?fit=2048%2C1075&ssl=1');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.85)), url('https://i0.wp.com/www.ambientlightblog.com/wp-content/uploads/2018/12/Scarlxrd_051218_0028-feature.jpg?fit=2048%2C1075&ssl=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
