@@ -23,7 +23,7 @@ Você poderá explorar cada álbum, visualizar as capas (incluindo versões alte
 
 ## 🔗 Acesse o Projeto
 
-🌐 [Discografia Completa de Scarlxrd](https://repositorio-sigma-six.vercel.app/discografia-scar/index.html)
+🌐 [Discografia Completa de Scarlxrd](https://discography-scarlxrd.vercel.app/)
 
 ---
 
