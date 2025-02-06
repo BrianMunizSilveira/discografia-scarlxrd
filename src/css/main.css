@@ -4,12 +4,12 @@
   --cor-principal: #ffffff;
   --cor-secundaria: #888888;
   --cor-texto-claro: #c5c5c5;
-  
+
   /* Fonts */
   --fonte-principal: 'Arial', sans-serif;
   --fonte-titulo: 'Arial', sans-serif;
   --fonte-subtitulo: 'Arial', sans-serif;
-  
+
   /* Transitions */
   --transicao-suave: 0.3s ease-in-out;
 }
@@ -24,7 +24,8 @@ body {
 }
 
 /* Typography */
-h1, h2 {
+h1,
+h2 {
   font-size: 2rem;
   text-align: center;
   margin: 0 0 30px;
@@ -62,7 +63,9 @@ a:hover {
 }
 
 /* Lists */
-li, ol, ul {
+li,
+ol,
+ul {
   list-style: decimal;
   padding-right: 1.5rem;
 }
@@ -251,7 +254,7 @@ main {
   font-size: 0.9em;
 }
 
-details.tracklist > p {
+details.tracklist>p {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -263,15 +266,50 @@ details.tracklist > p {
 
 /* Footer */
 footer {
-  background-color: var(--cor-fundo);
-  color: var(--cor-secundaria);
-  padding: 20px 0;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
   text-align: center;
-}
 
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+    .footer-section {
+      margin: 10px;
+      flex: 1 1 200px;
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .social-links {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 5px 0;
+          font-size: 1.1em;
+          list-style-type: none;
+
+          a {
+            color: #f52727;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
 /* Back to Top Button */
