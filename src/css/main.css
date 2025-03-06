@@ -282,12 +282,12 @@ details.tracklist>p {
   /* Links Rápidos */
   .quick-links {
       ul {
-          list-style: none;
           padding: 0;
       }
 
       li {
           margin: 10px 0;
+          list-style: none;
       }
 
       a {
