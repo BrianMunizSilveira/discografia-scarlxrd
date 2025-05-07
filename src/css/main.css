@@ -1,115 +1,186 @@
+/* ----------------------------------------------------------------
+ * FONTS
+ * ---------------------------------------------------------------- */
+@font-face {
+  font-family: BreakGothic;
+  src: url('../font/Break-gothic.ttf');
+  font-display: swap;
+}
+
+/* ----------------------------------------------------------------
+ * ROOT VARIABLES
+ * ---------------------------------------------------------------- */
 :root {
   /* Colors */
+  --cor-principal: #ff0000;
+  --cor-secundaria: #ffffff;
   --cor-fundo: #000000;
-  --cor-principal: #ffffff;
-  --cor-secundaria: #888888;
   --cor-texto-claro: #c5c5c5;
+  --cor-texto-escuro: #888888;
+  --cor-album-fundo: #292929;
+  --cor-texto-hover: #f52727;
+
+  /* Backgrounds */
+  --bg-album-section: rgba(15, 15, 15, 0.75);
+  --bg-album-hover: rgba(20, 20, 20, 0.85);
+  --bg-tracklist: rgba(255, 255, 255, 0.05);
+  --bg-tracklist-hover: rgba(255, 255, 255, 0.1);
+  --bg-footer: #0a0a0a;
+  --bg-stats: #1a1a1a;
+
+  /* Borders */
+  --borda-footer: #333;
+  --borda-album: rgba(255, 255, 255, 0.1);
+
+  /* Shadows */
+  --sombra: rgba(0, 0, 0, 0.3);
 
   /* Fonts */
   --fonte-principal: 'Arial', sans-serif;
-  --fonte-titulo: 'Arial', sans-serif;
-  --fonte-subtitulo: 'Arial', sans-serif;
+  --fonte-titulo: 'BreakGothic', sans-serif;
+
+  /* Gradients */
+  --gradiente-album-title: linear-gradient(45deg, #fff, #888);
+  --gradiente-link-album: linear-gradient(45deg, #f70, #f30);
+  --gradiente-link-album-hover: linear-gradient(45deg, #f30, #f70);
+  --gradiente-link-youtube: linear-gradient(45deg, #010100, #CD1212, #010100);
+  --gradiente-link-youtube-hover: linear-gradient(45deg, #CD1212, #490000, #CD1212);
 
   /* Transitions */
   --transicao-suave: 0.3s ease-in-out;
+  --transicao-botao: 0.2s ease;
+
+  /* Spacing */
+  --espaco-padrao: 1rem;
+  --espaco-pequeno: 0.5rem;
+  --espaco-medio: 1.5rem;
+  --espaco-grande: 2rem;
+
+  /* Layouts */
+  --max-largura: 1200px;
+  --borda-raio-pequeno: 5px;
+  --borda-raio-medio: 8px;
+  --borda-raio-grande: 10px;
+  --borda-raio-botao: 25px;
+  --borda-raio-completo: 50px;
 }
 
-/* Reset & Base Styles */
+/* ----------------------------------------------------------------
+ * RESET & BASE STYLES
+ * ---------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
+  background-color: #111;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.85)), url('https://i0.wp.com/www.ambientlightblog.com/wp-content/uploads/2018/12/Scarlxrd_051218_0028-feature.jpg?fit=2048%2C1075&ssl=1');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--cor-secundaria);
   margin: 0;
   padding: 0;
 }
 
-/* Typography */
-h1,
-h2 {
-  font-size: 2rem;
+/* ----------------------------------------------------------------
+ * TYPOGRAPHY
+ * ---------------------------------------------------------------- */
+h1, h2 {
   text-align: center;
   margin: 0 0 30px;
 }
 
 h1 {
   font-family: var(--fonte-titulo);
-  font-size: 3rem;
-  color: var(--cor-principal);
-  margin: 2rem;
-  letter-spacing: 14px;
+  font-size: 1.8rem;
+  color: var(--cor-secundaria);
+  margin: 1.5rem;
+  letter-spacing: 8px;
 }
 
 h2 {
-  font-family: var(--fonte-subtitulo);
-  color: var(--cor-secundaria);
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  color: var(--cor-texto-escuro);
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin: 15px 0;
   text-align: center;
 }
 
-/* Links */
+/* ----------------------------------------------------------------
+ * LINKS & INTERACTIVE ELEMENTS
+ * ---------------------------------------------------------------- */
 a {
-  color: var(--cor-secundaria);
+  color: var(--cor-texto-escuro);
   text-decoration: underline;
   transition: color var(--transicao-suave);
 }
 
 a:hover {
-  color: var(--cor-principal);
+  color: var(--cor-secundaria);
 }
 
-/* Lists */
-li,
-ol,
-ul {
+/* ----------------------------------------------------------------
+ * LISTS
+ * ---------------------------------------------------------------- */
+ul, ol {
   list-style: decimal;
-  padding-right: 1.5rem;
+  padding-right: 1rem;
 }
 
 li {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-/* Layout Components */
+/* ----------------------------------------------------------------
+ * LAYOUT COMPONENTS
+ * ---------------------------------------------------------------- */
 main {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 40px 20px;
-  border-radius: 10px;
+  padding: 20px 5px;
+  border-radius: var(--borda-raio-grande);
 }
 
-/* Album Section Styles */
+/* ----------------------------------------------------------------
+ * ALBUM SECTION STYLES
+ * ---------------------------------------------------------------- */
 .albums-container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--espaco-padrao);
 }
 
 .album-section {
-  background: rgba(15, 15, 15, 0.75);
+  background: var(--bg-album-section);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 2rem 0;
+  border: 1px solid var(--borda-album);
+  margin: var(--espaco-padrao) 0;
   transition: transform var(--transicao-suave);
 }
 
 .album-section:hover {
   transform: translateY(-5px);
-  background: rgba(20, 20, 20, 0.85);
+  background: var(--bg-album-hover);
 }
 
 .album-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 15px;
 }
 
 .album-item {
-  border-radius: 10px;
+  border-radius: var(--borda-raio-medio);
   overflow: hidden;
   transition: transform var(--transicao-suave);
   padding: 0;
@@ -119,79 +190,85 @@ main {
   transform: translateY(-5px);
 }
 
-/* Album Details */
+/* ----------------------------------------------------------------
+ * ALBUM DETAILS
+ * ---------------------------------------------------------------- */
 .album-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--espaco-pequeno);
   padding: 15px;
   text-align: center;
 }
 
 .album-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
-  background: linear-gradient(45deg, #fff, #888);
+  background: var(--gradiente-album-title);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: var(--cor-secundaria);
+  color: var(--cor-texto-escuro);
 }
 
 .album-date {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--cor-texto-claro);
 }
 
 .album-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--cor-texto-claro);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* Album Links */
+/* ----------------------------------------------------------------
+ * ALBUM LINKS
+ * ---------------------------------------------------------------- */
 .album-link,
 .album-link-youtube {
-  margin-top: 1rem;
+  margin-top: var(--espaco-pequeno);
   text-align: center;
 }
 
 .album-link a {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #f70, #f30);
-  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  background: var(--gradiente-link-album);
+  border-radius: var(--borda-raio-botao);
   color: white;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  transition: transform var(--transicao-botao);
 }
 
 .album-link a:hover {
-  background: linear-gradient(45deg, #f30, #f70);
+  background: var(--gradiente-link-album-hover);
   transform: scale(1.05);
 }
 
 .album-link-youtube a {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #010100, #CD1212, #010100);
-  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  background: var(--gradiente-link-youtube);
+  border-radius: var(--borda-raio-botao);
   color: white;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  transition: transform var(--transicao-botao);
 }
 
 .album-link-youtube a:hover {
-  background: linear-gradient(45deg, #CD1212, #490000, #CD1212);
+  background: var(--gradiente-link-youtube-hover);
   transform: scale(1.05);
 }
 
-/* Cover Images */
+/* ----------------------------------------------------------------
+ * COVER IMAGES
+ * ---------------------------------------------------------------- */
 .cover-container {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 12px;
+  border-radius: var(--borda-raio-pequeno);
   overflow: hidden;
 }
 
@@ -211,199 +288,190 @@ main {
   opacity: 1;
 }
 
-/* Tracklist */
+/* ----------------------------------------------------------------
+ * TRACKLIST
+ * ---------------------------------------------------------------- */
 .tracklist {
-  margin-top: 2rem;
+  margin-top: var(--espaco-padrao);
   border: none;
 }
 
 .tracklist summary {
   cursor: pointer;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: var(--cor-principal);
+  padding: var(--espaco-pequeno);
+  background: var(--bg-tracklist);
+  border-radius: var(--borda-raio-pequeno);
+  font-size: 1rem;
+  color: var(--cor-secundaria);
   font-weight: 700;
   text-align: center;
 }
 
 .tracklist summary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ff0000;
+  background: var(--bg-tracklist-hover);
+  color: var(--cor-principal);
 }
 
 .tracklist ol {
-  margin-top: 1rem;
+  margin-top: var(--espaco-pequeno);
   list-style-position: inside;
-  padding-left: 2rem;
+  padding-left: var(--espaco-padrao);
 }
 
 .tracklist li {
   color: #fff;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--espaco-pequeno) 0;
+  border-bottom: 1px solid var(--borda-album);
+  font-size: 0.9rem;
 }
 
 .tracklist li:last-child {
   border-bottom: none;
 }
 
-.track-duration {
-  color: var(--cor-secundaria);
-  font-size: 0.9em;
+.tracklist .track-duration {
+  color: var(--cor-texto-escuro);
+  font-size: 0.8em;
 }
 
-details.tracklist>p {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: var(--cor-principal);
+.tracklist>p {
+  margin-top: var(--espaco-pequeno);
+  padding: var(--espaco-pequeno);
+  border-radius: var(--borda-raio-pequeno);
+  font-size: 0.9rem;
+  color: var(--cor-secundaria);
   font-weight: 700;
   text-align: center;
 }
 
-/* Estilos do Footer */
+/* ----------------------------------------------------------------
+ * FOOTER
+ * ---------------------------------------------------------------- */
 .footer {
-  background-color: #0a0a0a;
-  color: #fff;
-  padding: 40px 20px 20px;
-  font-family: 'Arial', sans-serif;
-
-  .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding-bottom: 30px;
-  }
-  /* Links Rápidos */
-  .quick-links {
-      ul {
-          padding: 0;
-      }
-
-      li {
-          margin: 10px 0;
-          list-style: none;
-      }
-
-      a {
-          color: #fff;
-          text-decoration: none;
-          transition: color 0.3s ease;
-
-          &:hover {
-              color: #f52727;
-          }
-      }
-  }
-
-  /* Redes Sociais */
-  .social-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      margin-top: 20px;
-  }
-
-  .social-icon {
-      color: #fff;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
-
-      &:hover {
-          color: #f52727;
-      }
-  }
-
-  /* Seção de Estatísticas */
-  .stats-container {
-      display: grid;
-      gap: 20px;
-      margin-top: 20px;
-
-      .stat-item {
-          text-align: center;
-          padding: 15px;
-          background: #1a1a1a;
-          border-radius: 5px;
-
-          .stat-number {
-              display: block;
-              font-size: 1.5em;
-              font-weight: bold;
-              color: #f52727;
-              margin-bottom: 5px;
-          }
-
-          .stat-label {
-              font-size: 0.9em;
-              color: #888;
-          }
-      }
-  }
-
-  /* Barra Inferior */
-  .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      text-align: center;
-      font-size: 0.9em;
-
-      a {
-          color: #f52727;
-          text-decoration: none;
-
-          &:hover {
-              text-decoration: underline;
-          }
-      }
-  }
-
-  /* Títulos das Seções */
-  .footer-section {
-      h3 {
-          font-size: 1.2em;
-          margin-bottom: 20px;
-          padding-bottom: 10px;
-          border-bottom: 2px solid #f52727;
-          display: inline-block;
-      }
-  }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
-      .footer-content {
-          grid-template-columns: 1fr;
-          text-align: center;
-      }
-
-      .social-grid {
-          justify-content: center;
-          max-width: 300px;
-          margin: 20px auto;
-      }
-
-      .footer-section h3 {
-          display: block;
-          text-align: center;
-      }
-  }
+  background-color: var(--bg-footer);
+  color: var(--cor-secundaria);
+  padding: 30px 15px 15px;
+  font-family: var(--fonte-principal);
 }
+
+.footer-content {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* Footer Section Titles */
+.footer-section h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--cor-texto-hover);
+  display: block;
+  text-align: center;
+}
+
+/* Quick Links */
+.quick-links ul {
+  padding: 0;
+}
+
+.quick-links li {
+  margin: 8px 0;
+  list-style: none;
+}
+
+.quick-links a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  transition: color var(--transicao-suave);
+}
+
+.quick-links a:hover {
+  color: var(--cor-texto-hover);
+}
+
+/* Social Icons */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 15px auto;
+  max-width: 250px;
+  justify-content: center;
+}
+
+.social-icon {
+  color: var(--cor-secundaria);
+  font-size: 1.3em;
+  transition: color var(--transicao-suave);
+}
+
+.social-icon:hover {
+  color: var(--cor-texto-hover);
+}
+
+/* Stats Section */
+.stats-container {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.stats-container .stat-item {
+  text-align: center;
+  padding: 12px;
+  background: var(--bg-stats);
+  border-radius: var(--borda-raio-pequeno);
+}
+
+.stats-container .stat-number {
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--cor-texto-hover);
+  margin-bottom: 5px;
+}
+
+.stats-container .stat-label {
+  font-size: 0.8em;
+  color: var(--cor-texto-escuro);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid var(--borda-footer);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.footer-bottom a {
+  color: var(--cor-texto-hover);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------
+ * UTILITY COMPONENTS
+ * ---------------------------------------------------------------- */
 /* Back to Top Button */
 .back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 20px;
-  background-color: #b30101;
-  color: #fff;
-  font-size: 1.5rem;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
+  font-size: 0.9rem;
   border: none;
-  border-radius: 50px;
+  border-radius: var(--borda-raio-completo);
   cursor: pointer;
   transition: opacity var(--transicao-suave);
   opacity: 0;
@@ -416,30 +484,34 @@ details.tracklist>p {
 }
 
 .back-to-top:hover {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-principal);
+  background-color: var(--cor-texto-escuro);
+  color: var(--cor-secundaria);
 }
 
 /* Info Container */
 .info-container {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 15px;
+  left: 15px;
   display: flex;
   align-items: center;
 }
 
+.info-container.active .info-text {
+  display: inline-block;
+}
+
 .info-icon {
-  color: #fff;
-  background-color: #ff0000;
-  width: 30px;
-  height: 30px;
+  color: var(--cor-secundaria);
+  background-color: var(--cor-principal);
+  width: 25px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   transition: background-color var(--transicao-suave);
 }
 
@@ -449,17 +521,225 @@ details.tracklist>p {
 
 .info-text {
   display: none;
-  margin-left: 10px;
+  margin-left: 8px;
   background-color: #010100;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.info-container.active .info-text {
-  display: inline-block;
+  color: var(--cor-secundaria);
+  padding: 5px 8px;
+  border-radius: var(--borda-raio-pequeno);
+  font-size: 0.8rem;
 }
 
 #data-atualizacao {
   font-weight: bold;
+}
+
+/* ----------------------------------------------------------------
+ * MEDIA QUERIES FOR LARGER SCREENS
+ * ---------------------------------------------------------------- */
+/* Tablet (768px and up) */
+@media (min-width: 481px) {
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 25px 10px;
+  }
+
+  .album-title {
+    font-size: 1.1rem;
+  }
+
+  .album-date {
+    font-size: 1rem;
+  }
+
+  .album-description {
+    font-size: 1rem;
+  }
+
+  .albums-container {
+    padding: var(--espaco-medio);
+  }
+
+  .album-section {
+    margin: var(--espaco-medio) 0;
+  }
+
+  .album-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .tracklist summary {
+    font-size: 1.1rem;
+    padding: var(--espaco-padrao);
+  }
+
+  .tracklist li {
+    font-size: 1rem;
+  }
+
+  .back-to-top {
+    bottom: 25px;
+    right: 25px;
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+
+  .info-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+
+  .info-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens (1024px and up) */
+@media (min-width: 769px) {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 12px;
+    margin: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 30px 15px;
+    max-width: 90%;
+  }
+
+  .album-title {
+    font-size: 1.25rem;
+  }
+
+  .albums-container {
+    padding: var(--espaco-grande);
+    max-width: 90%;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+
+  .footer-section h3 {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .social-grid {
+    margin-left: 0;
+    justify-content: start;
+  }
+
+  .social-icon {
+    font-size: 1.4em;
+  }
+
+  .album-link a,
+  .album-link-youtube a {
+    padding: 0.7rem 1.4rem;
+  }
+
+  .tracklist summary {
+    font-size: 1.2rem;
+  }
+
+  .back-to-top {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 14px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 40px 20px;
+    max-width: var(--max-largura);
+  }
+
+  .album-title {
+    font-size: 1.5rem;
+  }
+
+  .album-date {
+    font-size: 1.2rem;
+  }
+
+  .album-description {
+    font-size: 1rem;
+  }
+
+  .albums-container {
+    max-width: var(--max-largura);
+  }
+
+  .album-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: var(--max-largura);
+  }
+
+  .album-link a,
+  .album-link-youtube a {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .cover-container {
+    border-radius: var(--borda-raio-medio);
+  }
+
+  .back-to-top {
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+  }
+
+  .info-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .info-text {
+    font-size: 1rem;
+  }
 }
